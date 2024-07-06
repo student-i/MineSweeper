@@ -25,8 +25,6 @@ Board::Board(int difficulty)
 void Board::reset(int firstCoro)
 {
    int numBombs = 0;
-   if (size == 9)
-      numBombs = 10;
    if (size == 16)
       numBombs = 40;
    else
@@ -201,7 +199,10 @@ void Board::updateBoard(int coro)
 void Board::displayBoard()
 {
    int index = 0;
-   cout << "   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16" << endl;       
+   if (size == 16)
+      cout << "   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16" << endl;      
+   else
+      cout << "   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25" << endl;
    for (int l = 0; l < size; l++)
    {
       SetColor(7, 0);
